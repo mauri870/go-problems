@@ -28,7 +28,7 @@ func getResult(n int, r bool) {
 			result = n * 3 + 1
 	}
 
-	fmt.Printf("%d\n", n)
+	fmt.Printf("%d\n", result)
 	
 	if exit {
 		os.Exit(1)
