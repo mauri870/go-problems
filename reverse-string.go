@@ -1,11 +1,15 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 )
 
 func main() {
-	reverse("Welcome to Go World!")
+	var s = flag.String("s", "Welcome to Go World!", "What you want to reverse?")
+	flag.Parse()
+
+	reverse(*s)
 }
 
 func reverse(s string) {
