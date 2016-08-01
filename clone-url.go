@@ -24,6 +24,8 @@ func main() {
 
 	body, _ := ioutil.ReadAll(res.Body)
 
+	os.Mkdir("static", 0755)
+
 	f, err := os.Create("static/index.html")
 	if err != nil {	
 		fmt.Printf("Error: %s\n", err)
