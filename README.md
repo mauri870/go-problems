@@ -39,6 +39,13 @@ Estimate the value of pi based on [Gauss-Legendre method](https://en.wikipedia.o
 go run gauss-legendre-pi.go
 ```
 
+### get-webpage-size.go
+Estimate the html webpage size
+#### Usage
+```bash
+go run get-webpage-size.go
+```
+
 ### monte-carlo-pi.go
 Estimate the value of pi based on [Monte Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method).
 #### Usage
