@@ -14,7 +14,7 @@ type WebPage struct {
 }
 
 func main() {
-	totalReqTime := 0.0
+	lifetime := 0.0
 	pages := []WebPage{
 		WebPage{"google", "http://google.com"},
 		WebPage{"facebook", "http://facebook.com"},
@@ -34,11 +34,11 @@ func main() {
 
 		endReq := time.Now()
 		reqDuration := endReq.Sub(startReq).Seconds()
-		totalReqTime += reqDuration
+		lifetime += reqDuration
 		fmt.Printf("The %s html page size is ~%v kb, retrieved in %vs\n", page.name, pageLenght, reqDuration)
 	}
 
-	fmt.Printf("Finished %d requests after %vs\n", len(pages), totalReqTime)
+	fmt.Printf("Finished %d requests after %vs\n", len(pages), lifetime)
 }
 
 func getPageSize(url string) (float32, error) {
