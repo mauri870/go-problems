@@ -46,6 +46,13 @@ Estimate the html webpage size
 go run get-webpage-size.go
 ```
 
+### get-webpage-size-concurrently.go
+Estimate the html webpage size using goroutines and channels
+#### Usage
+```bash
+go run get-webpage-size-concurrently.go
+```
+
 ### monte-carlo-pi.go
 Estimate the value of pi based on [Monte Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method).
 #### Usage
