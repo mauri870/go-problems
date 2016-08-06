@@ -1,11 +1,11 @@
 package main
 
 import (
-	"io/ioutil"
 	"flag"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"net/http"
-	"os"
 )
 
 func main() {
@@ -17,35 +17,15 @@ func main() {
 
 	res, err := client.Get(*u)
 	if err != nil {
-		fmt.Printf("Error: %s\n", err)
-		os.Exit(1)
+		log.Print(err)
 	}
 	defer res.Body.Close()
 
 	body, _ := ioutil.ReadAll(res.Body)
 
-	os.Mkdir("static", 0755)
-
-	f, err := os.Create("static/index.html")
-	if err != nil {	
-		fmt.Printf("Error: %s\n", err)
-		os.Exit(1)
-	}
-	defer f.Close()
-
-	_, err = f.Write(body)
-	if err != nil {	
-		fmt.Printf("Error: %s\n", err)
-		os.Exit(1)
-	}
-
-	
-	fmt.Printf("Listen on port %d\n", *p)
-	
-	fs := http.FileServer(http.Dir("static"))
-
-	http.Handle("/", fs)
+	log.Printf("Listen on port %d\n", *p)
+	http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, string(body))
+	})
 	http.ListenAndServe(fmt.Sprintf(":%d", *p), nil)
 }
-
-
