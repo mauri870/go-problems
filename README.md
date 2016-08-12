@@ -2,7 +2,7 @@
 Basic mathematical and real world problems resolved in go
 
 ### clone-url.go
-A basic implementation for a webpage cloner, that saves the clone on a file and serve then in a webserver
+A basic implementation for a webpage cloner, that serve de page in a given port
 #### Usage
 ```bash
 go run clone-url.go -u "http://url.dev/clone" -p 8080
