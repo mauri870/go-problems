@@ -28,7 +28,7 @@ func main() {
 		for {
 			fmt.Scanln(&value)
 
-			if value < 10 && value >= 0 {
+			if value <= 10 && value >= 0 {
 				break
 			}
 
