@@ -60,6 +60,13 @@ Estimate the value of pi based on [Monte Carlo method](https://en.wikipedia.org/
 go run monte-carlo-pi.go
 ```
 
+### odd-or-even.go
+A simple odd or even game
+#### Usage
+```bash
+go run odd-or-even.go
+```
+
 ### reverse-string.go
 Reverse a string
 #### Usage
