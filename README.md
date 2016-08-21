@@ -80,3 +80,10 @@ A basic server in go
 ```bash
 go run server.go
 ```
+
+### port-scanner.go
+A port scanner implementation, checking if a port is open or closed
+#### Usage
+```bash
+go run port-scanner.go
+```
